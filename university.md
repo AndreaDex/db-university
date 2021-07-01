@@ -1,0 +1,48 @@
+# Università
+
+## Studenti
+
+- Id (Matricola) BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- Nome VARCHAR(50) NOT_NULL
+- Cognome VARCHAR(50) NOT_NULL
+- Data di nascita DATE NOT_NULL
+
+## Docenti
+
+- ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- Nome VARCHAR(50) NOT_NULL
+- Cognome VARCHAR(50) NOT_NULL
+- \* Insegnamenti
+
+## Dipartimenti
+
+- ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- Nome VARCHAR(100) NOT_NULL
+- Rettore VARCHAR(50) NOT_NULL
+- \* Corsi di Studio
+
+## Corsi di Studio
+
+- ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- Denominazione VARCHAR(100) NOT_NULL
+- Classe VARCHAR(10) NOT_NULL
+- Coordinatore VARCHAR(50) NOT_NULL
+- Durata VARCHAR(20) NOT_NULL
+- \* \*Esami
+- \* \* Corsi di insegnamento
+
+## Corso di Insegnamento
+
+- ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- \* Docente
+- Ore SMALLINT NOT_NULL
+- CFU TINYINT NOT_NULL
+- \* Esame
+
+## Esami
+
+- ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
+- Data DATETIME NOT_NULL
+- \* \* Studente
+- Voto TINYINT
+- Lode TINYINT (boolean)
