@@ -18,7 +18,7 @@
 
 - ID BIGINT UNIQUE PRIMARY_KEY AUTO_INCREMENT INDEX
 - Nome VARCHAR(100) NOT_NULL
-- Rettore VARCHAR(50) NOT_NULL
+- Organi VARCHAR(100) NOT_NULL
 - \* Corsi di Studio
 
 ## Corsi di Studio
@@ -45,4 +45,4 @@
 - Data DATETIME NOT_NULL
 - \* \* Studente
 - Voto TINYINT
-- Lode TINYINT (boolean)
+- Lode TINYINT(1)
