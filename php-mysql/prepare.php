@@ -48,7 +48,6 @@ if ($results && $results->num_rows > 0) {
 }
 
 
-
 // Chiudere la connessione
 $connection->close();
 
