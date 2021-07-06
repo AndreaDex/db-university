@@ -12,8 +12,18 @@ $connection = new mysqli(DB_SERVERNAME, DB_USERNAME, DB_PASSWORD, DB_NAME, DB_PO
 // Controllo per errori durante la connessione 
 if ($connection && $connection->connect_error) {
     echo "Commection failed error: " . $connection->connect_error;
+} else {
+    echo "connessione riuscita";
 }
-// Eseguire una query
+
+
+$statement = $connection->prepare("INSERT INTO `departments` ('name', 'address', 'phone') VALUES ( ?, ?, ?)");
+$statement->bind_param("sss", $name, $address, $phone);
+$name = "Dipartimento delle arti magiche";
+$address = "Via della magia";
+$phone = "+03 8952 1711580";
+
+$statement->execute();
 
 $sql = "SELECT * FROM departments";
 $results = $connection->query($sql);
